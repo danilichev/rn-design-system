@@ -1,6 +1,6 @@
 import { TouchableOpacity } from "react-native";
+import { va } from "variance-authority";
 
-import { va } from "../utils/va";
 import { Box, BoxProps } from "./Box";
 import { Text } from "./Text";
 
