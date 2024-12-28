@@ -1,8 +1,8 @@
-import { TouchableOpacity } from "react-native";
 import { va } from "variance-authority";
 
-import { Box, BoxProps } from "./Box";
+import { BoxProps } from "./Box";
 import { Text } from "./Text";
+import { Touchable } from "./Touchable";
 
 type Props = BoxProps & {
   intent?: "primary" | "secondary";
@@ -10,6 +10,25 @@ type Props = BoxProps & {
   onPress?: () => void;
   size?: "large" | "medium" | "small";
   title: string;
+};
+
+export const Button = ({
+  intent,
+  isDisabled,
+  onPress,
+  size,
+  title,
+  ...rest
+}: Props) => {
+  return (
+    <Touchable
+      {...makeVaraintProps({ intent, isDisabled, size }, rest)}
+      disabled={isDisabled}
+      onPress={onPress}
+    >
+      <Text variant="buttonTitle">{title}</Text>
+    </Touchable>
+  );
 };
 
 type VaConfig = {
@@ -37,20 +56,3 @@ const makeVaraintProps = va<BoxProps, VaConfig>({
   },
   defaultVariants: { intent: "primary", isDisabled: false, size: "medium" },
 });
-
-export const Button = ({
-  intent,
-  isDisabled,
-  onPress,
-  size,
-  title,
-  ...rest
-}: Props) => {
-  return (
-    <TouchableOpacity disabled={isDisabled} onPress={onPress}>
-      <Box {...makeVaraintProps({ intent, isDisabled, size }, rest)}>
-        <Text variant="buttonTitle">{title}</Text>
-      </Box>
-    </TouchableOpacity>
-  );
-};
