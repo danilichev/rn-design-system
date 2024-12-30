@@ -1,7 +1,7 @@
 import { createText } from "@shopify/restyle";
 import { ComponentProps } from "react";
 
-import { Theme } from "../theme";
+import { Theme } from "src/theme";
 
 export const Text = createText<Theme>();
 

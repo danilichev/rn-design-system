@@ -1,16 +1,16 @@
 import {
-  BackgroundColorProps,
-  BorderProps,
-  SpacingProps,
   backgroundColor,
+  BackgroundColorProps,
   border,
+  BorderProps,
   composeRestyleFunctions,
   spacing,
+  SpacingProps,
   useRestyle,
 } from "@shopify/restyle";
 import { TouchableOpacity, TouchableOpacityProps } from "react-native";
 
-import { Theme } from "../theme";
+import { Theme } from "src/theme";
 
 type RestyleProps = SpacingProps<Theme> &
   BorderProps<Theme> &

@@ -1,10 +1,10 @@
 import { ThemeProvider } from "@shopify/restyle";
 import { StatusBar } from "expo-status-bar";
 
-import { Text } from "./src/components/Text";
-import { theme } from "./src/theme";
 import { Box } from "./src/components/Box";
 import { Button } from "./src/components/Button";
+import { Text } from "./src/components/Text";
+import { theme } from "./src/theme";
 
 export default function App() {
   return (
