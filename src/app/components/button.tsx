@@ -1,14 +1,14 @@
-import { Stack } from "expo-router";
 import React from "react";
 import { ScrollView } from "react-native";
 
 import { Box } from "src/components/Box";
 import { Button } from "src/components/Button";
+import { StackScreenOptions } from "src/components/navigation/StackScreenOptions";
 
 const ButtonComponentScreen = () => {
   return (
     <>
-      <Stack.Screen options={{ title: "Components" }} />
+      <StackScreenOptions title="Button" />
       <ScrollView>
         <Box
           alignItems="center"
